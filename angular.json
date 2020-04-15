@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "blagramator"
+    }
+  },
+  "defaultProject": "blagramator",
+  "cli": {
+    "analytics": false
+  }
 }
