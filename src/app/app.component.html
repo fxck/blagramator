@@ -1,1 +1,22 @@
-hi.
+<h1 class="muj-nadpis">{{ title }}</h1>
+
+<div class="clovek">
+
+  <h2>{{ person.name }}, {{ person.age }} years old</h2>
+
+  <div *ngFor="let item of list">{{ item }}</div>
+
+  <div class="pridavatko">
+
+    <input
+      [formControl]="listAddControl"
+      type="text"
+    />
+
+    <button (click)="onListAdd()">přidat {{ listAddControl.value }}</button>
+
+  </div>
+
+</div>
+
+
