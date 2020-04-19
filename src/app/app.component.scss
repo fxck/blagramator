@@ -1,7 +1,20 @@
-.muj-nadpis {
-
+.navigace {
+  position: fixed;
+  padding: 20px 5px;
 }
 
-.clovek {
-  background: #f2f2f2;
+  .navigace_link {
+    margin-right: 10px;
+    padding: 5px;
+    color: #000;
+    text-decoration: none;
+
+    &:hover {
+      background: #f2f2f2;
+    }
+  }
+
+.obsah {
+  padding: 10px;
+  padding-top: 50px;
 }

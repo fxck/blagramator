@@ -1,3 +1,16 @@
 {
-  "articles": [ ]
+  "person": [
+    {
+      "id": 1,
+      "name": "Honza",
+      "age": 10,
+      "tasks": []
+    },
+    {
+      "name": "Aleš",
+      "age": 29,
+      "tasks": [],
+      "id": 2
+    }
+  ]
 }
