@@ -1,4 +1,5 @@
 <b-person
+  *ngIf="(person$ | async) as person"
   [fullName]="person.name"
   [age]="person.age"
   [listItems]="person.tasks">

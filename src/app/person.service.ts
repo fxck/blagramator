@@ -4,7 +4,7 @@ import { BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 export interface Person {
-  id: string;
+  id?: string;
   name: string;
   age: number;
   tasks: string[];
@@ -12,20 +12,6 @@ export interface Person {
 
 @Injectable({ providedIn: 'root' })
 export class PersonService {
-  list: Person[] = [
-    {
-      id: '1',
-      name: 'Honza',
-      age: 10,
-      tasks: [ 'naučit se angular' ]
-    },
-    {
-      id: '2',
-      name: 'Aleš',
-      age: 29,
-      tasks: []
-    }
-  ];
 
   list$ = new BehaviorSubject<Person[]>([]);
 
@@ -37,22 +23,18 @@ export class PersonService {
     return this.list$.pipe(map((d) => d.find((item) => item.id === id)));
   }
 
-  getPerson(id: string) {
-    return this.list.find((item) => item.id === id);
-  }
-
   loadList() {
     this.httpClient
       .get<Person[]>(`${this.url}/person`)
       .subscribe((data) => this.list$.next(data));
   }
 
-  addPerson() {
+  addPerson(name: string, age: number) {
     this.httpClient.post<Person>(
       `${this.url}/person`,
       {
-        name: 'Aleš',
-        age: 29,
+        name,
+        age,
         tasks: []
       }
     ).subscribe(() => this.loadList());

@@ -3,3 +3,13 @@
     {{ item.id }} - {{ item.name }}, {{ item.age }} years old
   </a>
 </div>
+
+
+<form [formGroup]="personAddForm">
+
+  <input type="text" [formControl]="personAddForm.get('name')">
+  <input type="number" [formControl]="personAddForm.get('age')">
+
+  <button (click)="addPerson()">Add {{ personAddForm.get('name').value }}</button>
+
+</form>
